@@ -1,0 +1,19 @@
+{
+    "name": "warleyelias/customer-login",
+    "description": "The Customer Login module provides the ability lock a customer account in magento 2",
+    "require": {
+        "php": "^7||^8"
+    },
+    "type": "magento2-module",
+    "license": [
+        "MIT"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "PHPCuong\\CustomerLogin\\": ""
+        }
+    }
+}
