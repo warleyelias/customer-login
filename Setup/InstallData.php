@@ -99,7 +99,7 @@ class InstallData implements InstallDataInterface
             $source = 'Magento\Eav\Model\Entity\Attribute\Source\Boolean';
             // This is for the "reason" customer attribute
             if ($customerAttributeCode == 'reason') {
-                $source = 'PHPCuong\CustomerLogin\Model\Customer\Attribute\Source\Reason';
+                //$source = 'PHPCuong\CustomerLogin\Model\Customer\Attribute\Source\Reason';
             }
             /** @var $attributeSet AttributeSet */
             $attributeSet = $this->attributeSetFactory->create();
