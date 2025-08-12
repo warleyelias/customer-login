@@ -13,3 +13,7 @@ https://www.youtube.com/watch?v=tBGagDLXUAQ&list=PL98CDCbI3TNvPczWSOnpaMoyxVISLV
 
 # How to add a new dynamic row system configuration in the Magento 2 admin.
 https://www.youtube.com/watch?v=GZ-I9SdGLT0&list=PL98CDCbI3TNvPczWSOnpaMoyxVISLVzYQ
+
+# After instalation execute the query to change the source model to your attribute
+```UPDATE `eav_attribute` SET `source_model` = 'PHPCuong\\CustomerLogin\\Model\\Customer\\Attribute\\Source\\Reason' WHERE `eav_attribute`.`attribute_code` = 'reason';```
+This is to not impact when you generate an image that is direct connect to your production BD, so after deploy you need to change the source_model for attribute reason
