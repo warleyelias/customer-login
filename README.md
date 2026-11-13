@@ -17,3 +17,5 @@ https://www.youtube.com/watch?v=GZ-I9SdGLT0&list=PL98CDCbI3TNvPczWSOnpaMoyxVISLV
 # After instalation execute the query to change the source model to your attribute
 ```UPDATE `eav_attribute` SET `source_model` = 'PHPCuong\\CustomerLogin\\Model\\Customer\\Attribute\\Source\\Reason' WHERE `eav_attribute`.`attribute_code` = 'reason';```
 This is to not impact when you generate an image that is direct connect to your production BD, so after deploy you need to change the source_model for attribute reason
+
+The admin customer grid filters for "Blocked" and "Reason" are enabled automatically by the data patch `Setup/Patch/Data/MakeAttributesFilterableInGrid.php` (no manual query needed, also on stores that already had the module installed).

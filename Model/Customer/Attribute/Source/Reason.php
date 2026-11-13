@@ -70,6 +70,28 @@ class Reason extends \Magento\Eav\Model\Entity\Attribute\Source\Table
     }
 
     /**
+     * Resolve the label of a reason from the configured reasons list.
+     *
+     * The parent implementation looks the value up in eav_attribute_option, which is
+     * always empty for this attribute (its options come from configuration). Without
+     * this override the EAV validator rejects every reason other than "0" with
+     * "Attribute reason does not contain option with Id N" whenever a customer is saved.
+     *
+     * @param string|int $value
+     * @return string|bool
+     */
+    public function getOptionText($value)
+    {
+        foreach ($this->getAllOptions() as $option) {
+            if ((string)$option['value'] !== '0' && (string)$option['value'] === (string)$value) {
+                return $option['label'];
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * @return []
      */
     private function getReasonsList()
